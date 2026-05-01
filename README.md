@@ -1,6 +1,6 @@
 # Human Neuron 3D Model
 
-A procedurally generated, anatomically-correct 3D model of a single human neuron built with Blender Python. The model captures the key anatomical structures and places **regulatory molecule markers** at their correct interaction sites on the cell — making it useful both as a scientific visualization and as an educational tool for understanding how drugs and endogenous chemicals modulate neural function.
+A procedurally generated, anatomically-correct 3D model of a single human neuron built with Blender Python. The model captures the key anatomical structures and places **regulatory molecule markers** at their correct interaction sites on the cell — making it useful both as a scientific visualization and as an educational tool for understanding how drugs and endogenous chemicals modulate neural function. Customized to my neurochemical profile but of course can be adapted to anyone.
 
 ## What We're Building
 
