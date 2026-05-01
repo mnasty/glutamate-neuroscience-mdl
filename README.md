@@ -6,7 +6,9 @@ A procedurally generated, anatomically-correct 3D model of a single human neuron
 
 The human brain—  a wildly complex electrochemical machine but efficently built on a simple distributed system architecture where the basic unit of computation is a single neuron. This project generates one in 3D, then layers on the molecular "players" that regulate how it fires, how it gets damaged, and how it heals.
 
-The conversation in collaboration with Gemini and Claude that drove this project explored how substances like DXM, Gabapentin, Pregabalin, Buspirone, Lorazepam, Propranolol, and Seroquel push and pull on the glutamate system — the brain's primary excitatory force — and what happens when that force is managed well versus when it runs unchecked (excitotoxicity, cortisol cascade, dendritic withering, cognitive decline).
+The conversation in collaboration with Gemini and Claude that drove this project explored how anxiolytic substances like DXM, Gabapentin, Pregabalin, Buspirone, Lorazepam, Propranolol, and Seroquel push and pull on the glutamate system — the brain's primary excitatory force — and what happens when that force is managed well versus when it runs unchecked (excitotoxicity, cortisol cascade, dendritic withering, cognitive decline).
+
+I hope my psychiatrist appreciates this and takes my ideas about how to optimize my neurochemistry into account in our clinical relationship. But this is just too cool to not share.
 
 ## Running the Script
 
