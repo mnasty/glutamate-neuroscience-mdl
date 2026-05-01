@@ -21,9 +21,9 @@ blender --background --python neuron_model.py
 
 **Output:**
 
-`Neuron_Anatomical.obj` — a single joined mesh ready for import into any 3D application.
-`Neuron_Print_Body.obj` — modified version of the neuron itself for a 3D printer with 0.4mm nozzle.
-`Neuron_Print_Panel.obj` — a printable, attachable panel that functions as a key to understand the model in detail.
+* `Neuron_Anatomical.obj` — a single joined mesh ready for import into any 3D application.
+* `Neuron_Print_Body.obj` — modified version of the neuron itself for a 3D printer with 0.4mm nozzle.
+* `Neuron_Print_Panel.obj` — a printable, attachable panel that functions as a key to understand the model in detail.
 
 ## Anatomical Structures
 
