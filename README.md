@@ -19,7 +19,10 @@ blender --background --python neuron_model.py
 # Or open neuron_model.py in Blender's Scripting workspace and click Run Script
 ```
 
-Output: `Neuron_Anatomical.obj` — a single joined mesh ready for import into any 3D application.
+**Output:** 
+`Neuron_Anatomical.obj` — a single joined mesh ready for import into any 3D application.
+`Neuron_Print_Body.obj` — modified version of the neuron itself for a 3D printer with 0.4mm nozzle.
+`Neuron_Print_Panel.obj` — a printable, attachable panel that functions as a key to understand the model in detail.
 
 ## Anatomical Structures
 
