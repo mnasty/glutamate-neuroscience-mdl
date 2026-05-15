@@ -259,24 +259,8 @@ MOLECULE_DESCRIPTIONS = {
                      "BDNF expression — another reason controlling glutamate first is critical."),
 }
 
-# Short labels tied to the central thesis: glutamate is the master lever.
-MOLECULE_LABELS = {
-    "Glutamate":      "GLUTAMATE\nMaster excitatory lever. \nExcess → Ca²⁺ flood → excitotoxic cell death.",
-    "GABA":           "GABA\nGlutamate's brake. \nOpens Cl⁻ channels → hyperpolarises → silences firing.",
-    "DXM":            "DXM  (Dextrorphan)\nNMDA channel blocker. Lubricates\nthe cleft — Ca²⁺ dampened, signal preserved.",
-    "Gabapentin":     "GABAPENTIN\nCa²⁺ channel throttle (α₂δ). \nLess Ca²⁺ in → less glutamate out.",
-    "Pregabalin":     "PREGABALIN\nPrecision Ca²⁺ restrictor (6× Gab).\nHard-caps glutamate output volume.",
-    "Buspirone":      "BUSPIRONE\n5-HT1A thermostat sensor. Network\nsignal: 'glutamate pressure is enough.'",
-    "Seroquel":       "SEROQUEL  (Quetiapine)\nD2/5-HT2A/H1 multi-damper. \nAbsorbs glutamate-driven thermal runaway.",
-    "Norepinephrine": "NOREPINEPHRINE\nβ-adrenergic stress amplifier. \nTurns up glutamate pressure at the source.",
-    "Cortisol":       "CORTISOL\nGlutamate storm exhaust. Withers\ndendrites & sensitises NMDA → feedback loop.",
-    "SubstanceP":     "SUBSTANCE P\nCo-released with glutamate. \nProlongs NMDA burn — turns spark into fire.",
-    "Dynorphin":      "DYNORPHIN\nκ-opioid emergency shutoff. \nGlutamate overload → dissociation & numbness.",
-    "BDNF":           "BDNF\nPlasticity reward of managed glutamate. \nControlled signal → synaptic growth via TrkB.",
-}
 
-# Camera position — text faces toward it for readability
-CAM_POS = Vector((18.0, -22.0, 12.0))
+#Camera position — fixed location for joined export
 
 def add_molecule_marker(name, location, mat_key, radius=0.25, description=""):
     """
@@ -296,36 +280,6 @@ def add_molecule_marker(name, location, mat_key, radius=0.25, description=""):
     bpy.ops.object.shade_smooth()
     mol["molecule_name"] = name
     mol["description"]   = description
-
-    # ── 3D text label ──────────────────────────────────────────
-    label_key = name.split("_")[0]   # strip positional suffixes like _GR_0
-    body_text  = MOLECULE_LABELS.get(label_key,
-                     MOLECULE_LABELS.get(name, name))
-
-    # Position label above and slightly offset from the sphere
-    label_pos  = loc + Vector((0.0, 0.0, radius + 0.45))
-
-    bpy.ops.object.text_add(location=label_pos)
-    txt = bpy.context.active_object
-    txt.name = f"LBL_{name}"
-    txt.data.body          = body_text
-    txt.data.size          = 0.28
-    txt.data.align_x       = 'CENTER'
-    txt.data.space_line    = 1.1
-
-    # Orient text face (+Z) toward camera so it's readable from camera POV
-    to_cam = (CAM_POS - label_pos).normalized()
-    txt.rotation_euler = rotation_to_vector(to_cam)
-
-    # Use the same emissive material as the sphere
-    if txt.data.materials:
-        txt.data.materials[0] = MAT[mat_key]
-    else:
-        txt.data.materials.append(MAT[mat_key])
-
-    # Convert to mesh immediately so it's joinable
-    set_active(txt)
-    bpy.ops.object.convert(target='MESH')
 
     return mol
 
@@ -799,3 +753,4 @@ for name, desc_text in MOLECULE_DESCRIPTIONS.items():
     print(f"  {name:16s} — {desc_text[:80]}...")
 print()
 sys.stdout.flush()
+
